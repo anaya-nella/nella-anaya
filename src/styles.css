@@ -63,37 +63,44 @@
 
 :root {
   --radius: 1rem;
-  /* Soft warm cream background */
-  --background: oklch(0.985 0.008 85);
-  --foreground: oklch(0.28 0.025 50);
-  --card: oklch(0.995 0.005 85);
-  --card-foreground: oklch(0.28 0.025 50);
-  --popover: oklch(0.995 0.005 85);
-  --popover-foreground: oklch(0.28 0.025 50);
+  /* Clean white base */
+  --background: oklch(0.995 0.002 100);
+  --foreground: oklch(0.24 0.018 50);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.018 50);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.018 50);
   /* Soft sage green — primary brand */
-  --primary: oklch(0.62 0.055 150);
-  --primary-foreground: oklch(0.99 0.005 85);
+  --primary: oklch(0.6 0.06 150);
+  --primary-foreground: oklch(0.99 0.005 100);
   /* Baby pink — accent */
-  --secondary: oklch(0.92 0.035 15);
-  --secondary-foreground: oklch(0.32 0.04 25);
-  --muted: oklch(0.95 0.012 80);
-  --muted-foreground: oklch(0.5 0.025 60);
-  --accent: oklch(0.93 0.04 18);
-  --accent-foreground: oklch(0.32 0.04 25);
+  --secondary: oklch(0.94 0.028 18);
+  --secondary-foreground: oklch(0.3 0.04 25);
+  --muted: oklch(0.97 0.006 80);
+  --muted-foreground: oklch(0.48 0.022 60);
+  --accent: oklch(0.95 0.03 18);
+  --accent-foreground: oklch(0.3 0.04 25);
   --destructive: oklch(0.6 0.18 28);
-  --destructive-foreground: oklch(0.99 0.005 85);
-  --border: oklch(0.9 0.015 70);
-  --input: oklch(0.92 0.015 70);
-  --ring: oklch(0.62 0.055 150);
+  --destructive-foreground: oklch(0.99 0.005 100);
+  --border: oklch(0.92 0.01 70);
+  --input: oklch(0.93 0.01 70);
+  --ring: oklch(0.6 0.06 150);
   /* Brand-specific extensions */
-  --blush: oklch(0.92 0.035 15);
+  --blush: oklch(0.94 0.028 18);
+  --blush-soft: oklch(0.975 0.014 18);
   --blush-strong: oklch(0.82 0.06 18);
-  --sage: oklch(0.78 0.05 150);
-  --sage-strong: oklch(0.62 0.055 150);
-  --cream: oklch(0.97 0.015 85);
-  --ink: oklch(0.28 0.025 50);
+  --sage: oklch(0.84 0.04 150);
+  --sage-soft: oklch(0.96 0.018 150);
+  --sage-strong: oklch(0.55 0.065 150);
+  --cream: oklch(0.98 0.008 90);
+  --ink: oklch(0.22 0.018 50);
+  --ink-soft: oklch(0.42 0.02 55);
   --font-serif: "Lora", Georgia, serif;
   --font-sans: "Nunito Sans", system-ui, -apple-system, sans-serif;
+  --shadow-soft: 0 1px 2px oklch(0.22 0.018 50 / 0.04),
+    0 8px 24px -12px oklch(0.22 0.018 50 / 0.08);
+  --shadow-lift: 0 2px 4px oklch(0.22 0.018 50 / 0.04),
+    0 24px 48px -20px oklch(0.22 0.018 50 / 0.14);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -160,6 +167,72 @@
 
   h1, h2, h3, h4, h5, h6, .font-serif {
     font-family: var(--font-serif);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+  }
+}
+
+/* Reveal-on-scroll */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(0, -18px, 0) scale(1.03); }
+}
+@keyframes shimmer-line {
+  0%   { transform: scaleX(0); transform-origin: left; }
+  60%  { transform: scaleX(1); transform-origin: left; }
+  100% { transform: scaleX(1); transform-origin: right; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.reveal {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  animation: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.reveal-delay-1 { animation-delay: 0.08s; }
+.reveal-delay-2 { animation-delay: 0.16s; }
+.reveal-delay-3 { animation-delay: 0.24s; }
+.reveal-delay-4 { animation-delay: 0.32s; }
+
+.float-slow { animation: float-slow 12s ease-in-out infinite; }
+.float-slower { animation: float-slow 18s ease-in-out infinite; }
+
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.divider-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.is-visible, .float-slow, .float-slower {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
