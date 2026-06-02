@@ -62,26 +62,38 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --radius: 1rem;
+  /* Soft warm cream background */
+  --background: oklch(0.985 0.008 85);
+  --foreground: oklch(0.28 0.025 50);
+  --card: oklch(0.995 0.005 85);
+  --card-foreground: oklch(0.28 0.025 50);
+  --popover: oklch(0.995 0.005 85);
+  --popover-foreground: oklch(0.28 0.025 50);
+  /* Soft sage green — primary brand */
+  --primary: oklch(0.62 0.055 150);
+  --primary-foreground: oklch(0.99 0.005 85);
+  /* Baby pink — accent */
+  --secondary: oklch(0.92 0.035 15);
+  --secondary-foreground: oklch(0.32 0.04 25);
+  --muted: oklch(0.95 0.012 80);
+  --muted-foreground: oklch(0.5 0.025 60);
+  --accent: oklch(0.93 0.04 18);
+  --accent-foreground: oklch(0.32 0.04 25);
+  --destructive: oklch(0.6 0.18 28);
+  --destructive-foreground: oklch(0.99 0.005 85);
+  --border: oklch(0.9 0.015 70);
+  --input: oklch(0.92 0.015 70);
+  --ring: oklch(0.62 0.055 150);
+  /* Brand-specific extensions */
+  --blush: oklch(0.92 0.035 15);
+  --blush-strong: oklch(0.82 0.06 18);
+  --sage: oklch(0.78 0.05 150);
+  --sage-strong: oklch(0.62 0.055 150);
+  --cream: oklch(0.97 0.015 85);
+  --ink: oklch(0.28 0.025 50);
+  --font-serif: "Lora", Georgia, serif;
+  --font-sans: "Nunito Sans", system-ui, -apple-system, sans-serif;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +152,14 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
   }
 }
