@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Nella Anaya" },
+      { name: "description", content: "Builds a responsive website based on provided design, maintaining layout and content structure." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Nella Anaya" },
+      { property: "og:description", content: "Builds a responsive website based on provided design, maintaining layout and content structure." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Nella Anaya" },
+      { name: "twitter:description", content: "Builds a responsive website based on provided design, maintaining layout and content structure." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4c158537-c041-4f5f-a70e-5bb36fe810f8/id-preview-df3e8c90--9a9e2e79-1178-4771-b819-867619b746d0.lovable.app-1782756180985.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4c158537-c041-4f5f-a70e-5bb36fe810f8/id-preview-df3e8c90--9a9e2e79-1178-4771-b819-867619b746d0.lovable.app-1782756180985.png" },
     ],
     links: [
       {
