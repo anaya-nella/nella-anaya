@@ -249,19 +249,6 @@ function Index() {
                   <circle cx="200" cy="220" r="160" fill="url(#ab1)" />
                 </svg>
               </div>
-              <div className="absolute -bottom-5 -right-5 hidden rounded-2xl border border-border bg-card/95 px-4 py-3 text-sm shadow-[var(--shadow-soft)] backdrop-blur sm:block">
-                <div className="flex items-center gap-2">
-                  <div className="flex">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-3.5 w-3.5 fill-[color:var(--blush-strong)] text-[color:var(--blush-strong)]"
-                      />
-                    ))}
-                  </div>
-                  <span className="font-medium">+120 personas acompañadas</span>
-                </div>
-              </div>
             </div>
             <div className="reveal reveal-delay-1">
               <p className="text-[11px] uppercase tracking-[0.28em] text-[color:var(--sage-strong)]">
@@ -285,10 +272,9 @@ function Index() {
                 a que más personas construyan una vida y proyectos que se parezcan a lo que
                 realmente quieren para sí mismas.
               </p>
-              <dl className="mt-10 grid grid-cols-3 gap-6 border-t border-border/70 pt-8">
+              <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-border/70 pt-8">
                 {[
-                  { k: "+10", v: "años de práctica" },
-                  { k: "+120", v: "personas acompañadas" },
+                  { k: "+100", v: "mentorías brindadas" },
                   { k: "3", v: "áreas de trabajo" },
                 ].map((s) => (
                   <div key={s.v}>
