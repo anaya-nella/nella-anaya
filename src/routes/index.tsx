@@ -139,8 +139,8 @@ function Index() {
             te acompaña
           </p>
           <p className="reveal reveal-delay-3 mx-auto mt-7 max-w-lg text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            Espacios cálidos para encontrar claridad, confianza y dirección en los momentos de
-            cambio de tu vida y tus proyectos.
+            Espacios para encontrar claridad, dirección y confianza en los momentos de cambio de
+            tu vida y tus proyectos.
           </p>
           <div className="reveal reveal-delay-4 mt-10 flex flex-wrap items-center justify-center gap-3">
             <a
